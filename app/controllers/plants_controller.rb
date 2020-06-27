@@ -2,7 +2,7 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @garden = Garden.find(params[:garden_id])
-    @review.garden = @garden
+    @plant.garden = @garden
     if @plant.save
       redirect_to garden_path(@garden)
     else
